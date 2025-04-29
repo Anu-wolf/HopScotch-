@@ -143,6 +143,8 @@ class HopscotchGame {
       this.yPosition += moveDistance.y;
       this.xPosition = moveDistance.x;
       this.character.style.transform = `translateY(${-this.yPosition}px) translateX(${this.xPosition}px)`;
+      this.character.classList.add('jump');
+      setTimeout(() => this.character.classList.remove('jump'), 600);
 
       index++;
       setTimeout(moveNext, 1000);
