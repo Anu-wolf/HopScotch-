@@ -120,7 +120,7 @@ class HopscotchGame {
         characterImg.src = 'assets/jump.png';
         setTimeout(() => {
           characterImg.src = 'assets/stand.png';
-        }, 1000); // mid-air for 1s
+        }, 1000); // mid air for 1s
       }, 1000); // crouch for 1s
     };
 
@@ -153,16 +153,12 @@ class HopscotchGame {
     this.character.style.transform = `translateY(${-this.yPosition}px) translateX(${this.xPosition}px)`;
 
     index++;
-    setTimeout(moveNext, 3000); // 3 seconds per movement
+    setTimeout(moveNext, 3000); // 3 secs per movement
   };
 
   moveNext();
 }
-
-
-    
-
-
+  
   runSequence() {
     const currentOrder = Array.from(this.destinationContainer.children).map(button => button.id);
     this.moveCharacter(currentOrder, () => {
