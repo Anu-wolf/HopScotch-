@@ -100,7 +100,9 @@ class HopscotchGame {
 
   moveCharacter(buttonSequence, callback) {
     let index = 0;
-    this.character.style.transform = `translateY(${0}px) translateX(${0}px)`;
+    this.character.style.transform = `translateY(0px) translateX(0px)`;
+
+    const characterImg = document.getElementById('characterImg');
 
     const moveNext = () => {
       if (index >= buttonSequence.length) {
@@ -108,50 +110,58 @@ class HopscotchGame {
         return;
       }
 
-      const buttonId = buttonSequence[index];
-      let moveDistance;
+    const buttonId = buttonSequence[index];
+    let moveDistance;
 
-      switch (buttonId) {
-        case 'Hop':
-          moveDistance = { y: 80, x: 0 };
-          this.hop.style.display = 'block';
-          this.jump.style.display = 'none';
-          break;
-        case 'Skip':
-          moveDistance = { y: 150, x: 0 };
-          break;
-        case 'Jump':
-          moveDistance = { y: 80, x: 0 };
-          this.hop.style.display = 'none';
-          this.jump.style.display = 'block';
-          break;
-        case 'Skip-HopRight':
-          moveDistance = { y: 80, x: 32 };
-          this.hop.style.display = 'block';
-          this.jump.style.display = 'none';
-          break;
-        case 'Skip-HopLeft':
-          moveDistance = { y: 80, x: -32 };
-          this.hop.style.display = 'block';
-          this.jump.style.display = 'none';
-          break;
-        default:
-          moveDistance = { y: 0, x: 0 };
-          break;
-      }
-
-      this.yPosition += moveDistance.y;
-      this.xPosition = moveDistance.x;
-      this.character.style.transform = `translateY(${-this.yPosition}px) translateX(${this.xPosition}px)`;
-      this.character.classList.add('jump');
-      setTimeout(() => this.character.classList.remove('jump'), 600);
-
-      index++;
-      setTimeout(moveNext, 1000);
+    // Cycle through animation frames
+    const animateJump = () => {
+      characterImg.src = 'assets/crouch.png';
+      setTimeout(() => {
+        characterImg.src = 'assets/jump.png';
+        setTimeout(() => {
+          characterImg.src = 'assets/stand.png';
+        }, 1000); // mid-air for 1s
+      }, 1000); // crouch for 1s
     };
 
-    moveNext();
-  }
+    switch (buttonId) {
+      case 'Hop':
+        moveDistance = { y: 80, x: 0 };
+        break;
+      case 'Skip':
+        moveDistance = { y: 150, x: 0 };
+        break;
+      case 'Jump':
+        moveDistance = { y: 80, x: 0 };
+        break;
+      case 'Skip-HopRight':
+        moveDistance = { y: 80, x: 32 };
+        break;
+      case 'Skip-HopLeft':
+        moveDistance = { y: 80, x: -32 };
+        break;
+      default:
+        moveDistance = { y: 0, x: 0 };
+        break;
+    }
+
+    // Trigger image animation
+    animateJump();
+
+    this.yPosition += moveDistance.y;
+    this.xPosition = moveDistance.x;
+    this.character.style.transform = `translateY(${-this.yPosition}px) translateX(${this.xPosition}px)`;
+
+    index++;
+    setTimeout(moveNext, 3000); // 3 seconds per movement
+  };
+
+  moveNext();
+}
+
+
+    
+
 
   runSequence() {
     const currentOrder = Array.from(this.destinationContainer.children).map(button => button.id);
