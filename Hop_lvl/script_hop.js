@@ -115,14 +115,18 @@ class HopscotchGame {
 
     // Cycle through animation frames
     const animateJump = () => {
-      characterImg.src = 'assets/crouch.png';
+      characterImg.src = 'stand.png';
       setTimeout(() => {
-        characterImg.src = 'assets/jump.png';
+        characterImg.src = 'crouch.png';
         setTimeout(() => {
-          characterImg.src = 'assets/stand.png';
-        }, 1000); // mid-air for 1s
-      }, 1000); // crouch for 1s
+          characterImg.src = 'jump.png';
+          setTimeout(() => {
+            characterImg.src = 'stand.png';
+          }, 200); // stay in jump 2s
+        }, 1500); // crouch for 1.5s
+      }, 200); // delay before crouch
     };
+    
 
     switch (buttonId) {
       case 'Hop':
@@ -146,7 +150,12 @@ class HopscotchGame {
     }
 
     // Trigger image animation
-    animateJump();
+    if (buttonId === 'Jump') {
+      animateJump();
+    } else {
+      characterImg.src = 'stand.png'; // default
+    }
+    
 
     this.yPosition += moveDistance.y;
     this.xPosition = moveDistance.x;

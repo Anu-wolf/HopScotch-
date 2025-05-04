@@ -248,6 +248,11 @@ body{
         size: 10px;
         z-index: 1000000000
       }
+      .character-img {
+        width: 60px;
+        height: auto;
+        transition: all 0.3s ease;
+      }      
       .icon-jump{
         height: 60px;
         width: 60px;
