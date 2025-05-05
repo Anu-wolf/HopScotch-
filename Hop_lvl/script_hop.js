@@ -123,8 +123,8 @@ class HopscotchGame {
           setTimeout(() => {
             characterImg.src = 'stand.png';
           }, 2000); // stay in jump 2s
-        }, 1500); // crouch for 1.5s
-      }, 200); // delay before crouch
+        }, 1000); // crouch for 1s
+      }, 500); // delay before crouch
     };
     
 
