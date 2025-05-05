@@ -251,7 +251,7 @@ body{
       .character-img {
         width: 30px;
         height: auto;
-        transition: all 0.3s ease;
+        transition: transform 0.5s ease, opacity 0.3s ease;
       }      
       .icon-jump{
         height: 60px;
