@@ -249,7 +249,7 @@ body{
         z-index: 1000000000
       }
       .character-img {
-        width: 60px;
+        width: 30px;
         height: auto;
         transition: all 0.3s ease;
       }      
