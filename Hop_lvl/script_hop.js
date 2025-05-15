@@ -115,16 +115,9 @@ class HopscotchGame {
 
     // Cycle through animation frames
     const animateJump = () => {
-      characterImg.src = 'stand.png';
-      setTimeout(() => {
-        characterImg.src = 'crouch.png';
-        setTimeout(() => {
-          characterImg.src = 'jump.png';
-          setTimeout(() => {
-            characterImg.src = 'stand.png';
-          }, 2000); // stay in jump 2s
-        }, 1000); // crouch for 1s
-      }, 500); // delay before crouch
+      this.character.classList.remove(animate-jump);
+      void this.character.offsetWidth;
+      this.character.classList.add('animate-jump');
     };
     
 
@@ -151,10 +144,8 @@ class HopscotchGame {
 
     // Trigger image animation
     if (buttonId === 'Jump') {
-      animateJump();
-    } else {
-      characterImg.src = 'stand.png'; // default
-    }
+      animateJump.call(this);
+    } 
     
 
     this.yPosition += moveDistance.y;

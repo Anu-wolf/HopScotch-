@@ -299,6 +299,23 @@ body{
       .overlay-content button:hover {
         background-color: #0056b3;
       }
-      
+/*sprite animation */
+      .sprite{
+        width: 60px;
+        height: 100px;
+        background: url('First_jump')no-repeat;
+        background-size: 240px 100px;
+        position: absolute;
+        bottom: 0;
+        left: 50px;
+      }
+      .animate-jump{
+        animation: jumpAnimation 1s steps(4) forwards;
+      }
+
+      @keyframes jumpAnimation{
+        from { background-position: 0 0;}
+        to {background-position: -240px 0;}
+      }
           
           
