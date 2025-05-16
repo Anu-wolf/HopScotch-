@@ -114,16 +114,19 @@ class HopscotchGame {
 
     // Cycle through animation frames
    const animateJump = () => {
-   const character = this.character;
+   const el = this.character;
 
-  character.classList.remove('idle', 'jump-animation');
-  void character.offsetWidth; // force reflow
-  character.classList.add('jump-animation');
+  // Remove both classes to reset state
+  el.classList.remove('idle', 'jump-animation');
+  void el.offsetWidth; // force reflow
 
-  // revert back to idle after jump finishes
+  // Apply jump
+  el.classList.add('jump-animation');
+
+  // Restore idle after jump completes
   setTimeout(() => {
-    character.classList.remove('jump-animation');
-    character.classList.add('idle');
+    el.classList.remove('jump-animation');
+    el.classList.add('idle');
   }, 600); // match jump animation duration
 };
 
