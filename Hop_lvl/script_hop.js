@@ -102,7 +102,6 @@ class HopscotchGame {
     let index = 0;
     this.character.style.transform = `translateY(0px) translateX(0px)`;
 
-    const characterImg = document.getElementById('characterImg');
 
     const moveNext = () => {
       if (index >= buttonSequence.length) {
@@ -114,15 +113,20 @@ class HopscotchGame {
     let moveDistance;
 
     // Cycle through animation frames
-    const animateJump = () => {
-    const el = this.character;      // your `#character` div
-    el.classList.remove('jump-animation');
-    void el.offsetWidth;           // force reflow
-    el.classList.add('jump-animation');
-  
-  // after animation, go back to idle
-    setTimeout(() => el.classList.remove('jump-animation'), 800);
-  };
+   const animateJump = () => {
+   const character = this.character;
+
+  character.classList.remove('idle', 'jump-animation');
+  void character.offsetWidth; // force reflow
+  character.classList.add('jump-animation');
+
+  // revert back to idle after jump finishes
+  setTimeout(() => {
+    character.classList.remove('jump-animation');
+    character.classList.add('idle');
+  }, 600); // match jump animation duration
+};
+
 
     
 
@@ -152,7 +156,9 @@ class HopscotchGame {
       animateJump();
     } else {
       this.character.classList.remove('jump-animation');
+      this.character.classList.add('idle');
     }
+
 
     
 
