@@ -307,6 +307,7 @@ body{
   background-repeat: no-repeat;
   background-position: 0 0;
   image-rendering: pixelated; /* optional for crisp effect */
+  display: block;
 }
 
 /* Idle animation (looping) */
