@@ -115,10 +115,15 @@ class HopscotchGame {
 
     // Cycle through animation frames
     const animateJump = () => {
-      this.character.classList.remove(animate-jump);
-      void this.character.offsetWidth;
-      this.character.classList.add('animate-jump');
-    };
+    const el = this.character;      // your `#character` div
+    el.classList.remove('jump-animation');
+    void el.offsetWidth;           // force reflow
+    el.classList.add('jump-animation');
+  
+  // after animation, go back to idle
+    setTimeout(() => el.classList.remove('jump-animation'), 800);
+  };
+
     
 
     switch (buttonId) {
@@ -144,8 +149,11 @@ class HopscotchGame {
 
     // Trigger image animation
     if (buttonId === 'Jump') {
-      animateJump.call(this);
-    } 
+      animateJump();
+    } else {
+      this.character.classList.remove('jump-animation');
+    }
+
     
 
     this.yPosition += moveDistance.y;

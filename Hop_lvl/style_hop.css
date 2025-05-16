@@ -300,22 +300,21 @@ body{
         background-color: #0056b3;
       }
 /*sprite animation */
-      .sprite{
-        width: 60px;
-        height: 100px;
-        background: url('First_jump')no-repeat;
-        background-size: 240px 100px;
-        position: absolute;
-        bottom: 0;
-        left: 50px;
-      }
-      .animate-jump{
-        animation: jumpAnimation 1s steps(4) forwards;
-      }
+      /* style_hop.css */
+.sprite {
+  width: 60px;   /* width of one frame */
+  height: 100px; /* height of one frame */
+  background: url('assets/stickman-sprite.png') no-repeat 0 0;
+  background-size: /* total_width */ 240px /* total_height */ 100px;
+}
 
-      @keyframes jumpAnimation{
-        from { background-position: 0 0;}
-        to {background-position: -240px 0;}
-      }
-          
+.jump-animation {
+  animation: jumpAnim 0.8s steps(8) forwards;
+}
+
+@keyframes jumpAnim {
+  from { background-position:    0   0; }
+  to   { background-position: -240px 0; } /* -(frame_width * frames) */
+}
+
           
