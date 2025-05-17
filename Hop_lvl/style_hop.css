@@ -314,7 +314,7 @@ body{
 .idle {
   background-image: url('../Hop_lvl/assets/stickman-idle.png');
   background-size: 3184px 512px; /* 4 frames horizontally */
-  animation: idleAnim 1s steps(7) infinite;
+  animation: idleAnim 1.4s steps(7) infinite;
 }
 
 @keyframes idleAnim {
