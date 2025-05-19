@@ -311,7 +311,7 @@ body{
   image-rendering: pixelated;
   display: block;
   position: relative;
-  top: 555px;
+  top: 400px;
   left: 155px;
   z-index: 1000000000;
 }
