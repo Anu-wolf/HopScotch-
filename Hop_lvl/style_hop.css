@@ -124,6 +124,7 @@ body{
         position: relative;
         display: flex;
         flex-wrap: wrap;
+        top: -100px
     
         }
         img {
