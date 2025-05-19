@@ -5,7 +5,7 @@ body{
 }
     .container{
       position: relative;
-      top: 120px;
+      top: 210px;
       display: flex;
       flex-direction: row;
     }
@@ -304,15 +304,15 @@ body{
 .sprite {
   width: 512px;              /* One frame width */
   height: 512px;             /* One frame height */
-  transform: scale(0.5);          /*50% for now*/
+  transform: scale(0.4);          /*50% for now*/
   transform-origin: top left;
   background-repeat: no-repeat;
   background-position: 0 0;
   image-rendering: pixelated;
   display: block;
   position: relative;
-  top: 400px;
-  left: 155px;
+  top: 155px;
+  left: 79px;
   z-index: 1000000000;
 }
 
