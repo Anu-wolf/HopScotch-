@@ -306,7 +306,7 @@ body{
 .sprite {
   width: 512px;              /* One frame width */
   height: 512px;             /* One frame height */
-  transform: scale(0.4);          /*50% for now*/
+  transform: scale(0.4);          /*40% for now*/
   transform-origin: top left;
   background-repeat: no-repeat;
   background-position: 0 0;
@@ -322,7 +322,7 @@ body{
 .idle {
   background-image: url('../Hop_lvl/assets/stickman-idle.png');
   background-size: 3184px 512px; /* 7 frames * 512px */
-  animation: idleAnim 2s steps(7) infinite;
+  animation: idleAnim 3s steps(7) infinite;
 }
 
 @keyframes idleAnim {
@@ -333,6 +333,7 @@ body{
 /* Jump animation */
 .jump-animation {
   background-image: url('../Hop_lvl/assets/stickman-jump.png');
+  transform: scale(0.4);
   background-size: 3072px 512px; /* 6 frames * 512px */
   animation: jumpAnim 5s steps(6) forwards;
 }
