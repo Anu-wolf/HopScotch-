@@ -304,6 +304,8 @@ body{
 .sprite {
   width: 512px;              /* One frame width */
   height: 512px;             /* One frame height */
+  transform: scale(0.5);          /*50% for now*/
+  transform-origin: top left;
   background-repeat: no-repeat;
   background-position: 0 0;
   image-rendering: pixelated;
