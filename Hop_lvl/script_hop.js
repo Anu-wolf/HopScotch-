@@ -167,7 +167,9 @@ class HopscotchGame {
 
     this.yPosition += moveDistance.y;
     this.xPosition = moveDistance.x;
-    this.character.style.transform = `translateY(${-this.yPosition}px) translateX(${this.xPosition}px)`;
+    this.character.style.bottom = `${80 + this.yPosition}px`;
+    this.character.style.left = `${150 + this.xPosition}px`;
+
 
     index++;
     setTimeout(moveNext, 3000); // 3 secs per movement

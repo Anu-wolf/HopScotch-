@@ -312,9 +312,9 @@ body{
   background-position: 0 0;
   image-rendering: pixelated;
   display: block;
-  position: relative;
-  top: 155px;
-  left: 79px;
+  position: absolute;
+  bottom: 80px;
+  left: 150px;
   z-index: 1000000000;
 }
 
