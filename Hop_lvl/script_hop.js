@@ -110,7 +110,7 @@ class HopscotchGame {
       }
 
     const buttonId = buttonSequence[index];
-    let moveDistance;
+    let moveDistance= { y:70, x:0};
 
     // Cycle through animation frames
    const animateJump = () => {
@@ -156,23 +156,20 @@ class HopscotchGame {
 
     // Trigger image animation
     if (buttonId === 'Jump') {
-      animateJump();
+      this.animateJump();
     } else {
       this.character.classList.remove('jump-animation');
       this.character.classList.add('idle');
     }
 
-
-    
-
-    this.yPosition += moveDistance.y;
-    this.xPosition = moveDistance.x;
+    this.yPosition = index * moveDistance.y;
+    this.xPosition += moveDistance.x;
     this.character.style.bottom = `${20 + this.yPosition}px`;
     this.character.style.left = `${150 + this.xPosition}px`;
 
 
     index++;
-    setTimeout(moveNext, 3000); // 3 secs per movement
+    setTimeout(moveNext, 2500); // 2.5 secs per movement
   };
 
   moveNext();
