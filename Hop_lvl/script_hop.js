@@ -113,7 +113,7 @@ class HopscotchGame {
     let moveDistance= { y:70, x:0};
 
     // Cycle through animation frames
-   const animateJump = () => {
+  animateJump () {
     const el = this.character;
 
   // Remove both classes to reset state
