@@ -102,7 +102,7 @@ class HopscotchGame {
     let index = 0;
     this.yPosition = 0;
     this.xPosition = 0;
-    this.character.style.transform = `translateY(0px) translateX(0px)`;
+    this.character.style.transform = `translate(0,0)`;
     this.character.classList.remove('jump-animation');
     this.character.classList.add('idle');
 
@@ -114,7 +114,7 @@ class HopscotchGame {
       }
 
       const buttonId = buttonSequence[index];
-      let moveDistance= { y:0, x:0};
+      let moveDistance= { y:0, x:0 };
 
       // Trigger animation based on button type
       this.character.classList.remove('jump-animation', 'idle');
@@ -129,19 +129,19 @@ class HopscotchGame {
 
       switch (buttonId) {
         case 'Hop':
-          moveDistance = { y: 80, x: 0 };
+          moveDistance = { y: 30, x: 0 };
           break;
         case 'Skip':
-          moveDistance = { y: 150, x: 0 };
+          moveDistance = { y: 60, x: 0 };
           break;
         case 'Jump':
-          moveDistance = { y: 80, x: 0 };
+          moveDistance = { y: 30, x: 0 };
           break;
         case 'Skip-HopRight':
-          moveDistance = { y: 80, x: 32 };
+          moveDistance = { y: 30, x: 20 };
           break;
         case 'Skip-HopLeft':
-          moveDistance = { y: 80, x: -32 };
+          moveDistance = { y: 30, x: -20 };
           break;
         default:
           moveDistance = { y: 0, x: 0 };
@@ -156,7 +156,7 @@ class HopscotchGame {
       this.character.style.transform = `translateY(${-this.yPosition}px) translateX(${this.xPosition}px)`;
 
       index++;
-      setTimeout(moveNext, 3000); // 3 second per movement
+      setTimeout(moveNext, 2000); // 3 second per movement
     };
     moveNext();
 }

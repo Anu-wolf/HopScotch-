@@ -307,8 +307,8 @@ body{
 /*sprite animation */
       /* style_hop.css */
 .sprite {
-  width: 512px;              /* One frame width */
-  height: 512px;             /* One frame height */
+  width: 50px;              /* One frame width */
+  height: 50px;             /* One frame height */
   transform: scale(0.4);          /*40% for now*/
   transform-origin: top left;
   background-repeat: no-repeat;
@@ -316,34 +316,33 @@ body{
   image-rendering: pixelated;
   display: block;
   position: absolute;
-  bottom: -450px;
+  bottom: 20px;
   left: 150px;
   z-index: 1000000000;
+  background-size: 3500% 100%; /* For sprite sheets */
 }
 
 /* Idle animation */
 .idle {
   background-image: url('../Hop_lvl/assets/stickman-idle.png');
-  background-size: 3184px 512px; /* 7 frames * 512px */
   animation: idleAnim 3s steps(7) infinite;
 }
 
 @keyframes idleAnim {
   from { background-position: 0 0; }
-  to   { background-position: -3184px 0; }
+  to   { background-position: 100% 0; }
 }
 
 /* Jump animation */
 .jump-animation {
   background-image: url('../Hop_lvl/assets/stickman-jump.png');
   transform: scale(0.4);
-  background-size: 3072px 512px; /* 6 frames * 512px */
   animation: jumpAnim 5s steps(6) forwards;
 }
 
 @keyframes jumpAnim {
   from { background-position: 0 0; }
-  to   { background-position: -3072px 0; }
+  to   { background-position: 100% 0; }
 }
 
           
