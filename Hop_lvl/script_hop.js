@@ -100,7 +100,11 @@ class HopscotchGame {
 
   moveCharacter(buttonSequence, callback) {
     let index = 0;
+    this.yPosition = 0;
+    this.xPosition = 0;
     this.character.style.transform = `translateY(0px) translateX(0px)`;
+    this.character.classList.remove('jump-animation');
+    this.character.classList.add('idle');
 
 
     const moveNext = () => {
@@ -109,70 +113,52 @@ class HopscotchGame {
         return;
       }
 
-    const buttonId = buttonSequence[index];
-    let moveDistance= { y:70, x:0};
+      const buttonId = buttonSequence[index];
+      let moveDistance= { y:0, x:0};
 
-    // Cycle through animation frames
-   const animateJump = () => {
-    const el = this.character;
+      // Trigger animation based on button type
+      this.character.classList.remove('jump-animation', 'idle');
+      void this.character.offsetWidth; // force reflow
 
-  // Remove both classes to reset state
-    el.classList.remove('idle', 'jump-animation');
-    void el.offsetWidth; // force reflow
+      if (buttonId === 'Jump' || buttonId === 'Skip') {
+        this.character.classList.add('jump-animation');
+      } else {
+        this.character.classList.add('idle');
+      }
+         
 
-  // Apply jump
-    el.classList.add('jump-animation');
+      switch (buttonId) {
+        case 'Hop':
+          moveDistance = { y: 80, x: 0 };
+          break;
+        case 'Skip':
+          moveDistance = { y: 150, x: 0 };
+          break;
+        case 'Jump':
+          moveDistance = { y: 80, x: 0 };
+          break;
+        case 'Skip-HopRight':
+          moveDistance = { y: 80, x: 32 };
+          break;
+        case 'Skip-HopLeft':
+          moveDistance = { y: 80, x: -32 };
+          break;
+        default:
+          moveDistance = { y: 0, x: 0 };
+          break;
+      }
 
-  // Restore idle after jump completes
-    setTimeout(() => {
-      el.classList.remove('jump-animation');
-      el.classList.add('idle');
-    }, 600); // match jump animation duration
-  };
+      // Update position
+      this.yPosition += moveDistance.y;
+      this.xPosition += moveDistance.x;
 
+    // Apply movement with CSS transform
+      this.character.style.transform = `translateY(${-this.yPosition}px) translateX(${this.xPosition}px)`;
 
-    
-
-    switch (buttonId) {
-      case 'Hop':
-        moveDistance = { y: 80, x: 0 };
-        break;
-      case 'Skip':
-        moveDistance = { y: 150, x: 0 };
-        break;
-      case 'Jump':
-        moveDistance = { y: 80, x: 0 };
-        break;
-      case 'Skip-HopRight':
-        moveDistance = { y: 80, x: 32 };
-        break;
-      case 'Skip-HopLeft':
-        moveDistance = { y: 80, x: -32 };
-        break;
-      default:
-        moveDistance = { y: 0, x: 0 };
-        break;
-    }
-
-    // Trigger image animation
-    if (buttonId === 'Jump') {
-      this.animateJump();
-    } else {
-      this.character.classList.remove('jump-animation');
-      this.character.classList.add('idle');
-    }
-
-    this.yPosition = index * moveDistance.y;
-    this.xPosition += moveDistance.x;
-    this.character.style.bottom = `${20 + this.yPosition}px`;
-    this.character.style.left = `${150 + this.xPosition}px`;
-
-
-    index++;
-    setTimeout(moveNext, 2500); // 2.5 secs per movement
-  };
-
-  moveNext();
+      index++;
+      setTimeout(moveNext, 3000); // 3 second per movement
+    };
+    moveNext();
 }
   
   runSequence() {
