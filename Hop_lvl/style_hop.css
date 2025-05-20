@@ -106,7 +106,7 @@ body{
       }
       .contain{
       position: relative;
-      top: 30px;
+      top: 3px;
     
       }
       .stone {
@@ -316,7 +316,7 @@ body{
   image-rendering: pixelated;
   display: block;
   position: absolute;
-  bottom: 20px;
+  bottom: -450px;
   left: 150px;
   z-index: 1000000000;
 }
