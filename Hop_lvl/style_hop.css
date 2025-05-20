@@ -316,7 +316,7 @@ body{
   image-rendering: pixelated;
   display: block;
   position: absolute;
-  bottom: -450px;
+  bottom: 20px;
   left: 150px;
   z-index: 1000000000;
   background-size: 3500% 100%; /* For sprite sheets */
@@ -339,7 +339,7 @@ body{
   background-image: url('../Hop_lvl/assets/stickman-jump.png');
   transform: scale(0.4);
   background-size: 3072px 512px; /* 6 frames * 512px */
-  animation: jumpAnim 5s steps(6) forwards;
+  animation: jumpAnim 0.8s steps(6) forwards;
 }
 
 @keyframes jumpAnim {

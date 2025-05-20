@@ -127,7 +127,7 @@ class HopscotchGame {
     setTimeout(() => {
       el.classList.remove('jump-animation');
       el.classList.add('idle');
-    }, 600); // match jump animation duration
+    }, 800); // match jump animation duration
   };
 
 
@@ -162,7 +162,7 @@ class HopscotchGame {
       this.character.classList.add('idle');
     }
 
-    this.yPosition = index * moveDistance.y;
+    this.yPosition += 60; //60px per jump
     this.xPosition += moveDistance.x;
     this.character.style.bottom = `${20 + this.yPosition}px`;
     this.character.style.left = `${150 + this.xPosition}px`;
