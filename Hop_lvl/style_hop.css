@@ -319,14 +319,14 @@ body{
   bottom: 20px;
   left: 150px;
   z-index: 10; /*1000000000*/
-  background-image: url('Hop_lvl/assets/stickman-idle.png'); /* adjust path as needed */
-  /*background-size: contain;*/
-  background-size: 3500% 100%; /* For sprite sheets */
+  background-image: url('assets/stickman-idle.png'); /* adjust path as needed */
+  background-size: contain;
+  /*background-size: 3500% 100%; For sprite sheets */
 }
 
 /* Idle animation */
 .idle {
-  background-image: url('../Hop_lvl/assets/stickman-idle.png');
+  background-image: url('assets/stickman-idle.png');
   background-size: 3184px 512px; /* 7 frames * 512px */
   animation: idleAnim 3s steps(7) infinite;
 }
@@ -338,7 +338,7 @@ body{
 
 /* Jump animation */
 .jump-animation {
-  background-image: url('../Hop_lvl/assets/stickman-jump.png');
+  background-image: url('assets/stickman-jump.png');
   transform: scale(0.4);
   background-size: 3072px 512px; /* 6 frames * 512px */
   animation: jumpAnim 0.8s steps(6) forwards;
