@@ -316,9 +316,9 @@ body{
   image-rendering: pixelated;
   display: block;
   position: absolute;
-  bottom: 20px;
+  bottom: -505px;
   left: 150px;
-  z-index: 10; /*1000000000*/
+  z-index: 1000000000;
   background-image: url('assets/stickman-idle.png'); /* adjust path as needed */
   background-size: 3184px 512px;    /*can use contain*/
   /*background-size: 3500% 100%; For sprite sheets */
