@@ -339,7 +339,6 @@ body{
 /* Jump animation */
 .jump-animation {
   background-image: url('assets/stickman-jump.png');
-  transform: scale(0.4);
   background-size: 3072px 512px; /* 6 frames * 512px */
   animation: jumpAnim 0.8s steps(6) forwards;
 }
