@@ -110,28 +110,7 @@ class HopscotchGame {
       }
 
     const buttonId = buttonSequence[index];
-    let moveDistance= { y:70, x:0};
-
-    // Cycle through animation frames
-  function animateJump () {
-    const el = this.character;
-
-  // Remove both classes to reset state
-    el.classList.remove('idle', 'jump-animation');
-    void el.offsetWidth; // force reflow
-
-  // Apply jump
-    el.classList.add('jump-animation');
-
-  // Restore idle after jump completes
-    setTimeout(() => {
-      el.classList.remove('jump-animation');
-      el.classList.add('idle');
-    }, 800); // match jump animation duration
-  };
-
-
-    
+    let moveDistance= { y:70, x:0};    
 
     switch (buttonId) {
       case 'Hop':
@@ -174,7 +153,25 @@ class HopscotchGame {
 
   moveNext();
 }
+    // Cycle through animation frames
+    animateJump () {
+      const el = this.character;
   
+    // Remove both classes to reset state
+      el.classList.remove('idle', 'jump-animation');
+      void el.offsetWidth; // force reflow
+  
+    // Apply jump
+      el.classList.add('jump-animation');
+  
+    // Restore idle after jump completes
+      setTimeout(() => {
+        el.classList.remove('jump-animation');
+        el.classList.add('idle');
+      }, 800); // match jump animation duration
+    };  
+
+
   runSequence() {
     const currentOrder = Array.from(this.destinationContainer.children).map(button => button.id);
     this.moveCharacter(currentOrder, () => {
