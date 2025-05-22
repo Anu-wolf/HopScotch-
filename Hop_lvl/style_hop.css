@@ -251,7 +251,7 @@ body{
         height: auto;
         size: 10px;
         z-index: 1000000000;
-        transform: transform 0.5s ease;
+        transition: transform 0.5s ease;
       }
       .character-img {
         width: 43px;
