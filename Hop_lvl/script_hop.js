@@ -94,7 +94,7 @@ class HopscotchGame {
     }
 
     this.availableButtons = this.levelSequences[this.currentLevel];
-    this.character.style.transform = `translateY(${0}px) translateX(${0}px)`;
+    this.character.style.transform = `translate(${this.xPosition}px, -${this.yPosition}px) scale(0.2)`;
     this.updateButtonVisibility();
   }
 

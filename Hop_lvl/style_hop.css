@@ -307,9 +307,9 @@ body{
 /*sprite animation */
       /* style_hop.css */
 .sprite {
-  width: 50px;              /* One frame width */
-  height: 50px;             /* One frame height */
-  transform: scale(0.4);          /*40% for now*/
+  width: 512px;              /* One frame width */
+  height: 512px;             /* One frame height */
+  transform: scale(0.2);          /*40% for now*/
   transform-origin: top left;
   background-repeat: no-repeat;
   background-position: 0 0;
@@ -320,7 +320,7 @@ body{
   left: 150px;
   z-index: 10; /*1000000000*/
   background-image: url('assets/stickman-idle.png'); /* adjust path as needed */
-  background-size: contain;
+  background-size: 3184px 512px;    /*can use contain*/
   /*background-size: 3500% 100%; For sprite sheets */
 }
 
@@ -333,7 +333,7 @@ body{
 
 @keyframes idleAnim {
   from { background-position: 0 0; }
-  to   { background-position: -318px 0; }
+  to   { background-position: -3184px 0; }
 }
 
 /* Jump animation */
@@ -346,7 +346,7 @@ body{
 
 @keyframes jumpAnim {
   from { background-position: 0 0; }
-  to   { background-position: -307px 0; }
+  to   { background-position: -3072px 0; }
 }
 
           
