@@ -115,23 +115,23 @@ class HopscotchGame {
       }
 
     const buttonId = buttonSequence[index];
-    let moveDistance= { y:0, x:0};    
+    let moveDistance= { y:70, x:0};    
 
     switch (buttonId) {
       case 'Hop':
-        moveDistance = { y: -30, x: 0 };
+        moveDistance = { y: 50, x: 0 };
         break;
       case 'Skip':
         moveDistance = { y: 50, x: 0 };
         break;
       case 'Jump':
-        moveDistance = { y: -30, x: 0 };
+        moveDistance = { y: 50, x: 0 };
         break;
       case 'Skip-HopRight':
-        moveDistance = { y: -30, x: 32 };
+        moveDistance = { y: 50, x: 32 };
         break;
       case 'Skip-HopLeft':
-        moveDistance = { y: -30, x: -32 };
+        moveDistance = { y: 50, x: -32 };
         break;
       default:
         moveDistance = { y: 0, x: 0 };
