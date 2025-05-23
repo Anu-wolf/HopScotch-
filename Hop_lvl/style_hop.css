@@ -309,7 +309,7 @@ body{
 .sprite {
   width: 512px;              /* One frame width */
   height: 512px;             /* One frame height */
-  transform: scale(0.2);          /*40% for now*/
+  transform: scale(0.3);          /*40% for now*/
   transform-origin: bottom center;
   background-repeat: no-repeat;
   background-position: 0 0;
