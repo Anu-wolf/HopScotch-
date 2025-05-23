@@ -307,10 +307,11 @@ body{
 /*sprite animation */
       /* style_hop.css */
 .sprite {
+  border: 1px solid red;
   width: 512px;              /* One frame width */
   height: 512px;             /* One frame height */
   transform: scale(0.2);          /*40% for now*/
-  transform-origin: top left;
+  transform-origin: bottom center;
   background-repeat: no-repeat;
   background-position: 0 0;
   overflow: hidden;
@@ -318,7 +319,8 @@ body{
   display: block;
   position: absolute;
   /*bottom: -505px;*/
-  /*left: 150px;*/
+  top: 0px;
+  left: 0px;
   z-index: 1000000000;
   background-image: url('assets/stickman-idle.png'); /* adjust path as needed */
   background-size: 3184px 512px;    /*can use contain*/
@@ -347,6 +349,10 @@ body{
 @keyframes jumpAnim {
   from { background-position: 0 0; }
   to   { background-position: -3072px 0; }
+}
+
+.character-wrapper {
+  border: 2px dashed blue;
 }
 
           
