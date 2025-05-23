@@ -313,6 +313,7 @@ body{
   transform-origin: top left;
   background-repeat: no-repeat;
   background-position: 0 0;
+  overflow: hidden;
   image-rendering: pixelated;
   display: block;
   position: absolute;

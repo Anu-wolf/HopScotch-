@@ -104,7 +104,7 @@ class HopscotchGame {
 
   moveCharacter(buttonSequence, callback) {
     let index = 0;
-    this.character.style.transform = `translateY(0px) translateX(0px)`;
+    /*this.character.style.transform = `translateY(0px) translateX(0px)`;*/
 
 
     const moveNext = () => {
