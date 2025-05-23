@@ -119,19 +119,19 @@ class HopscotchGame {
 
     switch (buttonId) {
       case 'Hop':
-        moveDistance = { y: 80, x: 0 };
+        moveDistance = { y: 60, x: 0 };
         break;
       case 'Skip':
-        moveDistance = { y: 150, x: 0 };
+        moveDistance = { y: 130, x: 0 };
         break;
       case 'Jump':
-        moveDistance = { y: 80, x: 0 };
+        moveDistance = { y: 60, x: 0 };
         break;
       case 'Skip-HopRight':
-        moveDistance = { y: 80, x: 32 };
+        moveDistance = { y: 60, x: 32 };
         break;
       case 'Skip-HopLeft':
-        moveDistance = { y: 80, x: -32 };
+        moveDistance = { y: 60, x: -32 };
         break;
       default:
         moveDistance = { y: 0, x: 0 };
