@@ -86,7 +86,7 @@ class HopscotchGame {
   resetGame() {
     this.xPosition = 0;
     this.yPosition = 0;
-    this.character.style.transform = `translate(0px, 0px) scale(0.2)`;
+    this.character.style.transform = `translate(0px, 0px) scale(0.3)`;
 
     while (this.destinationContainer.firstChild) {
       this.buttonContainer.appendChild(this.destinationContainer.firstChild);
@@ -98,13 +98,13 @@ class HopscotchGame {
     }
 
     this.availableButtons = this.levelSequences[this.currentLevel];
-    this.character.style.transform = `translate(${this.xPosition}px, -${this.yPosition}px) scale(0.2)`;
+    this.character.style.transform = `translate(${this.xPosition}px, -${this.yPosition}px) scale(0.3)`;
     this.updateButtonVisibility();
   }
 
   moveCharacter(buttonSequence, callback) {
     let index = 0;
-    this.character.style.transform = `translate(${this.xPosition}px, -${this.yPosition}px) scale(0.2)`;
+    this.character.style.transform = `translate(${this.xPosition}px, -${this.yPosition}px) scale(0.3)`;
     /*this.character.style.transform = `translateY(0px) translateX(0px)`;*/
 
 
@@ -151,7 +151,7 @@ class HopscotchGame {
     /*this.character.style.bottom = '20px'; `${20 + this.yPosition}px`;*/
     /*this.character.style.left = '150px'; `${150 + this.xPosition}px`;*/
     /*this.character.style.transform = 'scale(0.2)';*/
-    this.character.style.transform = `translate(${this.xPosition}px, -${this.yPosition}px) scale(0.2)`;
+    this.character.style.transform = `translate(${this.xPosition}px, -${this.yPosition}px) scale(0.3)`;
 
     index++;
     setTimeout(moveNext, 3000); // 3 secs per movement

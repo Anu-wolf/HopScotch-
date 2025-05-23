@@ -307,7 +307,6 @@ body{
 /*sprite animation */
       /* style_hop.css */
 .sprite {
-  border: 1px solid red;
   width: 512px;              /* One frame width */
   height: 512px;             /* One frame height */
   transform: scale(0.2);          /*40% for now*/
