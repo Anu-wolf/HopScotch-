@@ -315,8 +315,8 @@ body{
   background-position: 0 0;
   image-rendering: pixelated;
   display: block;
-  position: absolute;
-  bottom: -505px;
+  position: relative;
+  bottom: 0px; /*used to be 505px*/
   left: 150px;
   z-index: 1000000000;
   background-image: url('assets/stickman-idle.png'); /* adjust path as needed */
