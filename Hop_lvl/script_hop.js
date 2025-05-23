@@ -84,6 +84,10 @@ class HopscotchGame {
   }
 
   resetGame() {
+    this.xPosition = 0;
+    this.yPosition = 0;
+    this.character.style.transform = `translate(0px, 0px) scale(0.2)`;
+
     while (this.destinationContainer.firstChild) {
       this.buttonContainer.appendChild(this.destinationContainer.firstChild);
       const buttons = Array.from(this.buttonContainer.children);
@@ -141,12 +145,12 @@ class HopscotchGame {
       this.character.classList.add('idle');
     }
 
-    this.yPosition += 60; //60px per jump
+    this.yPosition += moveDistance.y; //60px per jump
     this.xPosition += moveDistance.x;
-    this.character.style.bottom = '20px'; /*`${20 + this.yPosition}px`;*/
-    this.character.style.left = '150px'; /*`${150 + this.xPosition}px`;*/
-    this.character.style.transform = 'scale(0.2)';
-
+    /*this.character.style.bottom = '20px'; `${20 + this.yPosition}px`;*/
+    /*this.character.style.left = '150px'; `${150 + this.xPosition}px`;*/
+    /*this.character.style.transform = 'scale(0.2)';*/
+    this.character.style.transform = `translate(${this.xPosition}px, -${this.yPosition}px) scale(0.2)`;
 
     index++;
     setTimeout(moveNext, 3000); // 3 secs per movement

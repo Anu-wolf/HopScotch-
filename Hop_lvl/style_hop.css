@@ -317,7 +317,7 @@ body{
   display: block;
   position: absolute;
   /*bottom: -505px;*/
-  left: 150px;
+  /*left: 150px;*/
   z-index: 1000000000;
   background-image: url('assets/stickman-idle.png'); /* adjust path as needed */
   background-size: 3184px 512px;    /*can use contain*/
