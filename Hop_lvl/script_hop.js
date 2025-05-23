@@ -143,8 +143,9 @@ class HopscotchGame {
 
     this.yPosition += 60; //60px per jump
     this.xPosition += moveDistance.x;
-    this.character.style.bottom = `${20 + this.yPosition}px`;
-    this.character.style.left = `${150 + this.xPosition}px`;
+    this.character.style.bottom = '20px'; /*`${20 + this.yPosition}px`;*/
+    this.character.style.left = '150px'; /*`${150 + this.xPosition}px`;*/
+    this.character.style.transform = 'scale(0.2)';
 
 
     index++;
