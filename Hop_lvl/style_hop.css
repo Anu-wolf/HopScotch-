@@ -240,7 +240,7 @@ body{
       
     }
     .cjump{
-      transform: translateY(-50px);
+      transform: translateY(50px);
       transition-duration: 1s;
     }
     .character {
